@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Primeiro</title>
+</head>
+
+<style>
+  
+    body {
+      margin: 0px;
+      font-family: 'Roboto', sans-serif;
+    }
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background: #c3d8ee;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+  }
+
+  .primeiro h2 {
+    left: 33px;
+    position: relative;
+  }
+  .primeiro {
+    min-width: 670px;
+    min-height: 350px;
+    background: #fff;
+    border-radius: 5%;
+  }
+
+  .primeiro .user li {
+    margin-bottom: 50px;
+    font-size: 20px;
+  }
+
+ .container a{
+   text-decoration: none;
+   font-size: 19px;
+    position: relative;
+    left: 3%;
+    bottom: 200%;
+  }
+
+  .container a:hover {
+    color: rgb(23, 5, 39);
+    transition: 400ms;
+  }
+
+ .container .two {
+   left:  60%;
+ }
+   
+
+
+</style>
+
+<body>
+
+  <main>
+    <div class="container ">
+      <div class='primeiro'>
+        <h2>1) Retorna todos os usuários que definiram uma senha</h2>
+        <ul class="user" ></ul>
+        <a class="one" href="/">Voltar para home</a> 
+          <a class="two" href="/segundo.html">Próximo</a>
+  
+      </div>
+     
+    </div>
+  </main>
+  <script>
+    let usuarios = [
+      {
+        nome:"opaa",
+        email:"opaaa@gmail.com",
+        senha: "boommfii"
+      },
+      {
+        nome:"ele",
+        email:"ele@gmail.com",
+        senha: "f13423655"
+      },
+      {
+        nome:"ela",
+        email:"ela@gmail.com",
+        senha: "fjhvjhg655"
+      },
+      {
+        nome: 'Amadeus',
+        email: 'amadeus@digitalhouse.com',
+        senha: '123456',
+        filmes: [
+          {
+            nome: 'Ghost in the Shell',
+            gostou: true,
+            estrelas: 5,
+          },
+          {
+            nome: 'Vingadores: Ultimato',
+            gostou: true,
+            estrelas: 5,
+          },
+          {
+            nome: 'Alita',
+            gostou: true,
+            estrelas: 5,
+          }
+        ]
+      },
+      {
+        nome: 'Fulano',
+        email: 'fulano@digitalhouse.com',
+        senha: null,
+        filmes: [
+          {
+            nome: 'Ghost in the Shell',
+            gostou: false,
+            estrelas: 1,
+          },
+          {
+            nome: 'Vingadores: Ultimato',
+            gostou: true,
+            estrelas: 5,
+          },
+          {
+            nome: 'Alita',
+            gostou: false,
+            estrelas: 2,
+          }
+        ]
+      },
+      {
+        nome: 'Beltrano',
+        email: 'beltrano@digitalhouse.com',
+        senha: null,
+        filmes: [
+        ]
+      },
+      {
+        nome: 'Ciclano',
+        email: 'ciclano@digitalhouse.com',
+        senha: 'abc123',
+        filmes: [
+          {
+            nome: 'Ghost in the Shell',
+            gostou: false,
+            estrelas: 1,
+          },
+          {
+            nome: 'Vingadores: Ultimato',
+            gostou: false,
+            estrelas: 1,
+          },
+          {
+            nome: 'Alita',
+            gostou: true,
+            estrelas: 5,
+          }
+        ]
+      },
+      {
+        nome: 'Altrano',
+        email: 'altrano@digitalhouse.com',
+        senha: '111aaabc',
+        filmes: [
+          {
+            nome: 'Ghost in the Shell',
+            gostou: true,
+            estrelas: 4,
+          },
+          {
+            nome: 'Vingadores: Ultimato',
+            gostou: true,
+            estrelas: 3,
+          },
+          {
+            nome: 'Alita',
+            gostou: true,
+            estrelas: 3,
+          }
+        ]
+      },
+    ]
+
+    function temSenha(usuarios) {
+      usuarios.forEach(usuario => {
+        if (usuario.senha != null) {
+          let res = (` Nome: ${usuario.nome} | Email:${usuario.email} | Senha: ${usuario.senha}`);
+          // console.log("-".repeat(30))
+
+          let listElement = document.querySelector('.primeiro ul');
+
+          function renderSenha() {
+
+            let element = document.createElement('li');
+            var users = document.createTextNode(res);
+
+            element.appendChild(users);
+            listElement.appendChild(element);
+          }
+          renderSenha()
+        };
+      });
+    };
+
+    temSenha(usuarios);
+
+  </script>
+</body>
+
+</html>
